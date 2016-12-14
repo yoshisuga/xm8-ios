@@ -4,6 +4,5 @@ This is an iOS port of an existing emulator for the PC-8801, called [xm8](http:/
 
 ## Known Issues
 
-- FM sound is not working :( I unfortunately don't know enough of how FM sound is generated so I can't fix it (yet). Sound comes up as static noise.
 - Emulator is not full screen
 - Touch targets for tapping menu options are slightly off
