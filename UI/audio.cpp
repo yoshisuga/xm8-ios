@@ -364,7 +364,6 @@ int Audio::Write(Uint8 *stream, int len)
 	if (sample_buffer == NULL) {
 		return 0x80;
 	}
-
 	len *= (device_spec.channels * sizeof(Sint16));
 
 	// lock
@@ -458,7 +457,7 @@ void Audio::Callback(Uint8 *stream, int len)
 {
 	int size1;
 	int size2;
-
+    
 	// lock
 	SDL_SemWait(audio_sem);
 
@@ -487,6 +486,8 @@ void Audio::Callback(Uint8 *stream, int len)
 		sample_read = size2;
 		sample_num -= size2;
 	}
+//    SDL_memset(stream, 0, len);
+    SDL_MixAudio(stream, sample_buffer, len, SDL_MIX_MAXVOLUME);
 
 	// unlock
 	SDL_SemPost(audio_sem);
