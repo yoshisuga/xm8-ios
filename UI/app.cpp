@@ -33,6 +33,11 @@
 #include "tapemgr.h"
 #include "app.h"
 
+#if defined(__IPHONEOS__)
+#include "ios-glue.h"
+#endif
+
+
 //
 // defines
 //
@@ -211,6 +216,10 @@ bool App::Init()
 	else {
 		height = (width * APP_HEIGHT_TRANSPARENT) / APP_WIDTH;
 	}
+
+#if defined(__IPHONEOS__)
+    ios_get_screen_width_height(&width, &height);
+#endif
 	window = SDL_CreateWindow(  GetAppTitle(),
 								SDL_WINDOWPOS_UNDEFINED,
 								SDL_WINDOWPOS_UNDEFINED,

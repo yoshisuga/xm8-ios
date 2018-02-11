@@ -10,4 +10,6 @@
 #define ios_glue_h
 
 void ios_get_base_path(char *path);
+void ios_get_screen_width_height(int *width, int *height);
+
 #endif /* ios_glue_h */

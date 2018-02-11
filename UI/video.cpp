@@ -204,7 +204,7 @@ bool Video::Init(SDL_Window *win)
 	}
     
 #if defined(__IPHONEOS__)
-    SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH * 0.9, SCREEN_HEIGHT * 0.9);
 #endif
 
 	// drawing texture

@@ -26,12 +26,12 @@
                   moduleName = "xm8-ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yoshi/Code/xm8-ios/UI/fileio.cpp"
-                  timestampString = "503352000.388624"
+                  timestampString = "530298905.323417"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "279"
                   endingLineNumber = "279"
-                  offsetFromSymbolStart = "138">
+                  offsetFromSymbolStart = "192">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,14 +41,30 @@
                   moduleName = "xm8-ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yoshi/Code/xm8-ios/UI/fileio.cpp"
-                  timestampString = "503352000.389961"
+                  timestampString = "530298905.324952"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "279"
                   endingLineNumber = "279"
-                  offsetFromSymbolStart = "176">
+                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/video.cpp"
+            timestampString = "508018584.131276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "Video::Init(SDL_Window *win)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
