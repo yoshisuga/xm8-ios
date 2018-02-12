@@ -555,6 +555,42 @@ void Input::GetJoystick(Uint32 *status)
 			}
 		}
 
+        // For gamepads, the dpad is set to the hat state so map it here to the appropriate joy status
+        int numHats = SDL_JoystickNumHats(joystick[loop]);
+        if ( numHats > 0 ) {
+            // assume the first hat is the dpad
+            int hatState = SDL_JoystickGetHat(joystick[loop], 0);
+            if ( hatState == SDL_HAT_UP ) {
+                status[0] |= 0x01;
+            }
+            if ( hatState == SDL_HAT_DOWN ) {
+                status[0] |= 0x02;
+            }
+            if ( hatState == SDL_HAT_LEFT ) {
+                status[0] |= 0x04;
+            }
+            if ( hatState == SDL_HAT_RIGHT) {
+                status[0] |= 0x08;
+            }
+            if ( hatState == SDL_HAT_LEFTUP ) {
+                status[0] |= 0x01;
+                status[0] |= 0x04;
+            }
+            if ( hatState == SDL_HAT_RIGHTUP ) {
+                status[0] |= 0x08;
+                status[0] |= 0x01;
+            }
+            if ( hatState == SDL_HAT_LEFTDOWN ) {
+                status[0] |= 0x04;
+                status[0] |= 0x02;
+            }
+            if ( hatState == SDL_HAT_RIGHTDOWN ) {
+                status[0] |= 0x08;
+                status[0] |= 0x02;
+            }
+        }
+
+        
 		// get the number of buttons
 		buttons = SDL_JoystickNumButtons(joystick[loop]);
 		if (buttons > (int)(SDL_arraysize(joystick_button) / 2)) {

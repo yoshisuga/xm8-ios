@@ -1254,20 +1254,18 @@ void App::Poll(SDL_Event *e)
 		break;
 
 	case SDL_JOYAXISMOTION:
-		if (app_menu == true) {
-			menu->OnJoystick();
-		}
-		else {
-			if (app_background == false) {
-				input->OnJoystick();
-			}
-		}
-		break;
+    case SDL_JOYHATMOTION:
+        if (app_menu == true) {
+            menu->OnJoystick();
+        }
+        else {
+            if (app_background == false) {
+                input->OnJoystick();
+            }
+        }
+        break;
 
 	case SDL_JOYBALLMOTION:
-		break;
-
-	case SDL_JOYHATMOTION:
 		break;
 
 	case SDL_JOYBUTTONDOWN:
